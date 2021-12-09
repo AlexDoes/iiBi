@@ -153,6 +153,8 @@ function makeChart(ticker) {
           .attr("x", width / 25)
           .attr("y", 170 - margin.top / 2)
           .style("opacity","0.6");
+          
+        const losses = ['DIDI','GPRO','KHC','UAA']
 
         function mouseMove(event) {
           const bisect = d3.bisector((d) => d.date).left,
@@ -163,19 +165,12 @@ function makeChart(ticker) {
             z1 = data[0],
             d = x0 - d0.date > d1.date - x0 ? d1 : d0;
 
-          const losses = ['DIDI','GPRO','KHC','UAA']
 
           focus
             .select("circle.y")
             .attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")")
             .style("fill","red")
-              .attr("x", (xTranslate) => {
-                if (losses.includes(ticker)) {
-                  return ((width / 6) * 4)
-                } else {
-                  return (width / 25)
-                }
-              });
+
           focus
             .select("text.date")
             .text(`Date: ${d.date.toLocaleDateString("en-US", dateOptions)}`)
@@ -186,6 +181,7 @@ function makeChart(ticker) {
                 return (width / 25)
               }
             });
+            
           focus
             .select("text.high")
             .text(`High: $${d.high}`)
