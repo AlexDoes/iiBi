@@ -1,5 +1,6 @@
 function makeChart(ticker) {
   const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
   d3.select("svg").remove();
   
   const centerIMG = document.getElementById("centerimg");
@@ -32,7 +33,7 @@ function makeChart(ticker) {
           .range([ 0, width ]);
         
         const y = d3.scaleLinear()
-          .domain([0, d3.max(data, function(d) { return +d.close; })])
+          .domain([0, d3.max(data, function(d) { return +d.high; })])
           .range([ height, 0 ]);
         
         svg.append("g") 
@@ -70,7 +71,7 @@ function makeChart(ticker) {
             .attr("stroke-width", 2)
             .attr("d", d3.line()
               .x(function (d) { return x(d.date) })
-              .y(function (d) { return y(d.close) })
+              .y(function (d) { return y(d.close)})
             );
         
         svg
@@ -156,15 +157,14 @@ function makeChart(ticker) {
           
         const losses = ['DIDI','GPRO','KHC','UAA']
 
-        function mouseMove(event) {
-          const bisect = d3.bisector((d) => d.date).left,
-            x0 = x.invert(d3.pointer(event, this)[0]),
-            i = bisect(data, x0, 1),
-            d0 = data[i-1],
-            d1 = data[i],
+        function mouseMove(e) {
+          const bsec = d3.bisector((d) => d.date).left,
+            x0 = x.invert(d3.pointer(e, this)[0]),
+            i = bsec(data, x0, 1),
             z1 = data[0],
-            d = x0 - d0.date > d1.date - x0 ? d1 : d0;
-
+            d0 = data[i],
+            d1 = data[i-1],
+            d = x0 - d0.date < d1.date - x0 ? d0 : d1;
 
           focus
             .select("circle.y")
@@ -238,7 +238,7 @@ function makeChart(ticker) {
               } else {
                 return (width / 25)
               }
-            });;
+            });
           focus
             .select("text.oChange")
             .text(`All-time % Change: ${((d.close - z1.open) / z1.open * 100).toFixed(2)}%`)
@@ -254,7 +254,7 @@ function makeChart(ticker) {
               } else {
                 return (width / 25)
               }
-            });;
+            });
             
           focus
             .select(".x")

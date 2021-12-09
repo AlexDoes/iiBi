@@ -68,13 +68,13 @@ text{
 }
 
 .icon-container {
-  display: flex;
+  display: fixed;
   align-items:stretch;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 16%;
-  height: auto;
+  // height: auto;
 }
 
 .visual-container {
