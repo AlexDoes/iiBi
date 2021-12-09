@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./dist/main.css" />
+    <script src="./dist/main.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+    </style>
+    <title>iiBi</title>
+</head>
+
+<body>
+    <div class="nav_bar">
+        <img src="assets/iibi3.png" class="zoom" height=60px width="55px"> 
+    <div id="title"> iiBi </div>
+
+    </div>
+
+    <div class="tinterModal" id="tint" onClick="closeWelcomeBox()">
+        <div class="welcomeBox">
+            <div class="welcomeBoxText"> 
+                <h1> Welcome to iiBi </h1>
+                <p> iiBi is an interactive data visualization of a selection of stocks performance over the years.
+                    <p>   
+                        Please select a stock by clicking any of the icons on the left.
+                    </p>
+                    <p>
+                        Each logo will load the respective company's stock performance over the year. 
+                    </p>
+                    <p id="interact"> <b>Click anywhere to interact!</b></p>
+                    <p id="API">
+                       The stock data was acquired using Alpha Vantage API!
+                   </p>
+                   <p id="API">
+                       The company icons are provided by Clearbit API!
+                   </p>
+                </p>
+            </div class="welcomeBoxText">
+        </div>
+    </div>
+
+    <div class="visual-container">
+        <div class="icon-container">
+            <img src="//logo.clearbit.com/amctheatres.com" onclick="makeChart('AMC')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/AMD.com" onclick="makeChart('AMD')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/amazon.com" onclick="makeChart('AMZN')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/DIDIGLOBAL.com" onclick="makeChart('DIDI')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/DOMINOS.com" onclick="makeChart('DPZ')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/dexcom.com" onclick="makeChart('DXCM')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/FACEBOOK.COM" onclick="makeChart('FB')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/GM.com" onclick="makeChart('GM')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/GOPRO.com" onclick="makeChart('GPRO')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/LULULEMON.COM" onclick="makeChart('LULU')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/netflix.com" onclick="makeChart('NFLX')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/NIKE.COM" onclick="makeChart('NKE')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/nikolamotor.com" onclick="makeChart('NKLA')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/PELOTON.COM" onclick="makeChart('PTON')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/senseonics.com" onclick="makeChart('SENS')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/SPGLOBAL.COM" onclick="makeChart('SPY')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/TESLA.COM" onclick="makeChart('TSLA')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/UA.COM" onclick="makeChart('UAA')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/ULTA.COM" onclick="makeChart('ULTA')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/ZOOM.COM" onclick="makeChart('ZM')" class="logo" height=60px width=60px>
+        </div>
+
+        <script src="src/scripts/graph.js"></script>
+        <script src="src/scripts/closeWelcome.js"></script>
+
+        <div id="container">
+            <img src="assets/iibi3.png" id="centerimg" height=550 width=500>
+        </div>
+    </div>
+</body>
+
+</html>
