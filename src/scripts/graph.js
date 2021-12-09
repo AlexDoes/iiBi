@@ -20,7 +20,7 @@ function makeChart(ticker) {
   .append("g")
   .attr("transform", `translate(${margin.left},${margin.top})`);
 
-  d3.csv(`../sampleData/daily_adjusted_${ticker}.csv`,
+  d3.csv(`./sampleData/daily_adjusted_${ticker}.csv`,
     function(d){
         return { date : d3.timeParse("%Y-%m-%d")(d.date), open : d.open, high : d.high, low : d.low, close : d.close, volume : d.volume };
     }).then(
@@ -181,7 +181,7 @@ function makeChart(ticker) {
                 return (width / 25)
               }
             });
-            
+
           focus
             .select("text.high")
             .text(`High: $${d.high}`)
