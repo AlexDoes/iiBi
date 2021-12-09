@@ -1,4 +1,4 @@
-# JavaScript Project: iiBi
+# JavaScript Project: [iiBi](https://alexdoes.github.io/iiBi/)
 
 ## Overview
 
