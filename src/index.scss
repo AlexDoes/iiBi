@@ -68,11 +68,11 @@ text{
 }
 
 .icon-container {
-  display: fixed;
+  display: flex;
   align-items:stretch;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 16%;
   // height: auto;
 }
@@ -161,5 +161,5 @@ svg {
   border-right: 1px solid green;
   box-shadow: 2px 1px 1px 1px green;
   font-style: italic;
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
 }
