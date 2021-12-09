@@ -75,7 +75,7 @@ function makeChart(ticker) {
         
         svg
             .append("text")
-            .attr("class", "title")
+            .attr("class", "title2")
             .attr("x", width / 2)
             .attr("y", 20 - margin.top / 2)
             .attr("text-anchor", "middle")
