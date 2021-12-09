@@ -1,6 +1,4 @@
 .nav_bar {
-    // background-color: #94abbd;
-    // background-color: #aae5f0;
     background-color: #f2dad6;
     position: fixed; 
     top: 0;
@@ -11,7 +9,6 @@
 }
 
 body {
-    // background-color: #d6eef2;
     background-color: #e0f2d6;
     margin-top: 80px;
     margin-left: auto;
@@ -78,7 +75,6 @@ text{
   justify-content: space-around;
   width: 16%;
   height: auto;
-  // margin-left: 30px;
 }
 
 .visual-container {
@@ -103,7 +99,7 @@ svg {
   width: -14%;
 }
 
-.tinterModal { // background tint 
+.tinterModal {
   display: none;
   position: fixed;
   top: 0;
@@ -114,7 +110,7 @@ svg {
   z-index: 1;
 }
 
-.welcomeBox { // my box
+.welcomeBox { 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
