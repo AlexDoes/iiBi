@@ -27,3 +27,17 @@ This project will be implemented with the following technologies:
 
 
 ## Preview & Snippets
+
+### Preview without hover ###
+![noHover](https://github.com/AlexDoes/iiBi/blob/main/assets/projectSnippets/Screen%20Shot%202021-12-09%20at%2011.19.32%20AM.png)
+
+### Preview with over ###
+![hover](https://github.com/AlexDoes/iiBi/blob/main/assets/projectSnippets/Screen%20Shot%202021-12-09%20at%2011.20.12%20AM.png)
+
+### Snippet for switching display data from left to right according to data point ### 
+![swap](https://github.com/AlexDoes/iiBi/blob/main/assets/projectSnippets/Screen%20Shot%202021-12-09%20at%2011.26.00%20AM.png)
+
+### Snippet for removing the center image for the graphs ###
+![remove](https://github.com/AlexDoes/iiBi/blob/main/assets/projectSnippets/Screen%20Shot%202021-12-09%20at%2011.27.47%20AM.png)
+
+Disclaimer: I am not a financial advisor, everything here is used for entertainment purposes only!
