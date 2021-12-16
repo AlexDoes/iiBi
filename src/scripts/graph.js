@@ -37,14 +37,12 @@ function makeChart(ticker) {
           .range([ height, 0 ]);
         
         svg.append("g") 
-          .attr("class","x axis")
           .attr("transform", `translate(0, ${height})`)
           .transition() 
           .duration(2500)
           .call(d3.axisBottom(x));
         
         svg.append("g") 
-          .attr("class","y axis")
           .transition() 
           .duration(2500)
           .call(d3.axisLeft(y));
@@ -54,8 +52,7 @@ function makeChart(ticker) {
           .attr("transform", "rotate(-90)")
           .attr("y", 0 - margin.left)
           .attr("x", 0 - height / 2)
-          .attr("dy", "1em")
-          .style("text-anchor", "middle") 
+          .attr("dy", ".75em")
           .text("USD");
           
         const linePath = svg
@@ -82,73 +79,71 @@ function makeChart(ticker) {
             .attr("text-anchor", "middle")
             .text(ticker + ' stock performance');
 
-        const focus = svg
+        const overlay = svg
           .append("g")
-          .attr("class", "focus")
+          .attr("class", "overlay")
           .style("display", "none");
 
-        focus
+        overlay
           .append("line")
           .attr("class", "x")
           .style("stroke-dasharray", "3,3")
-          .style("opacity", 0.5)
           .attr("y2", height);
 
-        focus
+        overlay
           .append("line")
           .attr("class", "y")
           .style("stroke-dasharray", "3,3")
-          .style("opacity", 0.5)
           .attr("x2", width);
           
-        focus
+        overlay
           .append("circle")
           .attr("class", "y")
           .attr("r", 5);
 
-        focus
+        overlay
           .append("text")
           .attr("class", "date")
           .attr("x", width / 25)
           .attr("y", 50 - margin.top / 2)
           .style("opacity", "0.6");
 
-        focus
+        overlay
           .append("text")
           .attr("class", "open")
           .attr("x", width / 25)
           .attr("y", 70 - margin.top / 2)
           .style("opacity", "0.6");
 
-        focus
+        overlay
           .append("text")
           .attr("class", "high")
           .attr("x", width / 25 )
           .attr("y", 90 - margin.top / 2)
           .style("opacity", "0.6");
 
-        focus
+        overlay
           .append("text")
           .attr("class", "low")
           .attr("x", width / 25)
           .attr("y", 110 - margin.top / 2)
           .style("opacity", "0.6");
 
-        focus
+        overlay
           .append("text")
           .attr("class", "close")
           .attr("x", width / 25)
           .attr("y", 130 - margin.top / 2)
           .style("opacity", "0.6");
 
-        focus
+        overlay
           .append("text")
           .attr("class", "change")
           .attr("x", width / 25)
           .attr("y", (150 - margin.top / 2))
           .style("opacity", "0.6");
 
-        focus
+        overlay
           .append("text")
           .attr("class", "oChange")
           .attr("x", width / 25)
@@ -166,12 +161,12 @@ function makeChart(ticker) {
             d1 = data[i-1],
             d = x0 - d0.date < d1.date - x0 ? d0 : d1;
 
-          focus
+          overlay
             .select("circle.y")
-            .attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")")
+            .attr("transform", `translate(${x(d.date)},${y(d.close)})`)
             .style("fill","red")
 
-          focus
+          overlay
             .select("text.date")
             .text(`Date: ${d.date.toLocaleDateString("en-US", dateOptions)}`)
             .attr("x", (xTranslate) => {
@@ -182,7 +177,7 @@ function makeChart(ticker) {
               }
             });
 
-          focus
+          overlay
             .select("text.high")
             .text(`High: $${d.high}`)
             .attr("x", (xTranslate) => {
@@ -192,7 +187,7 @@ function makeChart(ticker) {
                 return (width / 25)
               }
             });
-          focus
+          overlay
             .select("text.open")
             .text(`Open: $${d.open}`)
             .attr("x", (xTranslate) => {
@@ -202,7 +197,7 @@ function makeChart(ticker) {
                 return (width / 25)
               }
               });
-          focus
+          overlay
             .select("text.close")
             .text(`Close: $${d.close}`)
             .attr("x", (xTranslate) => {
@@ -212,7 +207,7 @@ function makeChart(ticker) {
                 return (width / 25)
               }
               });
-          focus
+          overlay
             .select("text.low")
             .text(`Low: $${d.low}`)
             .attr("x", (xTranslate) => {
@@ -222,7 +217,7 @@ function makeChart(ticker) {
                 return (width / 25)
               }
             });
-          focus
+          overlay
             .select("text.change")
             .text(`Daily % Change: ${((d1.close-d0.close)/d0.close * 100).toFixed(2)}%`)
             .style('fill', (color) => {
@@ -239,7 +234,7 @@ function makeChart(ticker) {
                 return (width / 25)
               }
             });
-          focus
+          overlay
             .select("text.oChange")
             .text(`All-time % Change: ${((d.close - z1.open) / z1.open * 100).toFixed(2)}%`)
             .style('fill',(color) => {
@@ -256,14 +251,14 @@ function makeChart(ticker) {
               }
             });
             
-          focus
+          overlay
             .select(".x")
-            .attr("transform", "translate(" + x(d.date) + "," + y(d.close) + ")")
+            .attr("transform", `translate(${x(d.date)},${y(d.close)})`)
             .attr("yDash", height - y(d.close));
 
-          focus
+          overlay
             .select(".y")
-            .attr("transform", "translate(" + width * -1 + "," + y(d.close) + ")")
+            .attr("transform", `translate(${-(width)},${y(d.close)})`)
             .attr("x2", width + x(d.date));
         }
         svg
@@ -271,12 +266,13 @@ function makeChart(ticker) {
           .attr("width", width)
           .attr("height", height)
           .style("fill", "none")
+          .style("cursor","pointer")
           .style("pointer-events", "all")
           .on("mouseover", () => {
-            focus.style("display", null);
+            overlay.style("display", "block");
           })
           .on("mouseout", () => {
-            focus.style("display", "none");
+            overlay.style("display", "none");
           })
           .on("touchmove mousemove", mouseMove);
       })

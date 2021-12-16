@@ -54,17 +54,13 @@ circle.y {
 line.x, line.y {
   stroke: violet;
   stroke-width: 3;
+  opacity: .75;
 }
 
 text{
   font-size: 16px ;
   font-weight: 2000;
   position: absolute;
-  // text-shadow:
-  // 0.07em 0 black,
-  // 0 0.07em black,
-  // -0.07em 0 black,
-  // 0 -0.07em black;
 }
 
 .icon-container {
@@ -74,7 +70,6 @@ text{
   flex-wrap: wrap;
   justify-content: space-around;
   width: 16%;
-  // height: auto;
 }
 
 .visual-container {
@@ -84,12 +79,6 @@ text{
   height: 87vh;
   margin-left: 100px;
   gap: 75px;
-}
-
-svg {
-  font-size: 40px;
-  background-color: transparent;
-  opacity: 0.7;
 }
 
 #container  {
@@ -161,5 +150,4 @@ svg {
   border-right: 1px solid green;
   box-shadow: 2px 1px 1px 1px green;
   font-style: italic;
-  // padding-bottom: 20px;
 }
