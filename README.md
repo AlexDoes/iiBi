@@ -1,43 +1,41 @@
-# JavaScript Project: [iiBi](https://alexdoes.github.io/iiBi/)
+# JavaScript Project: [iiBi](https://iibnb.herokuapp.com/#/)
 
 ## Overview
 
-iiBi is a simple visualization of stock growth. iiBi allows the user to select from a series of stocks to display
-the respective stock's performance.
-
-The user will be able to smoothly transition between stocks to display and the user will be able to follow along the path
-of the data. The data will display the appropriate data relative to the position of the cursor over the graph.
+iiBnB is an [AirBnB](https://www.airbnb.com/) clone, where users can view listings available to reserve and create listings to host. 
+The user is able to navigate the site through the search bar and clicking on results provided by the search as well as scrolling through the map.
+The listings have information pertaining to the content of the listing so users can view details about the place before reserving.
 
 ## Functionality & MVPs
 
 In iiBi, users will be able to :
-<li> Select a stock to generate a graph of it's performance</li>
-<li> Track the change in stock price with a marker </li>
-<li> View data as an overlay on the graph </li>
-<li> Toggle to display different stock graphs </li>
+<li> Sign up and sign into an account</li>
+<li> View, create, and edit listings </li>
+<li> Search an area for available listings </li>
+<li> Scroll around the map to load more listings within bound </li>
 
  ## Technologies, Libraries, APIs
 This project will be implemented with the following technologies: 
-<li> D3.js to render the data 
+<li> Ruby on Rails framework
 <li> Webpack to bundle the source JavaScript code
 <li> Babel to transpile JavaScript for older browsers
-<li> Alpha Vantage API to retrieve stock history
-<li> Clearbit API to retrieve company logos
+<li> PostgresSQL Database
+<li> AWS S3 Media Storage
+<li> React, Redux, and jQuery to handle the state of the front-end
+<li> Google Maps API for map functionality and search autocomplete functionality
 </li>
+
+## Future implementations/ work in progress
+This project is still far from complete.
+Future functionalities to implement in the near future include:
+<li> A User profile to manage listings and other features in an intuitive manner
+<li> Being able to view, create, edit, and delete reservations
+<li> Being able to view, create, edit, and delete reviews
+
 
 
 ## Preview & Snippets
 
-### Preview without hover ###
-![noHover](https://github.com/AlexDoes/iiBi/blob/main/assets/projectSnippets/Screen%20Shot%202021-12-09%20at%2011.19.32%20AM.png)
+### ###
 
-### Preview with over ###
-![hover](https://github.com/AlexDoes/iiBi/blob/main/assets/projectSnippets/Screen%20Shot%202021-12-09%20at%2011.20.12%20AM.png)
 
-### Snippet for switching display data from left to right according to data point ### 
-![swap](https://github.com/AlexDoes/iiBi/blob/main/assets/projectSnippets/Screen%20Shot%202021-12-09%20at%2011.26.00%20AM.png)
-
-### Snippet for removing the center image for the graphs ###
-![remove](https://github.com/AlexDoes/iiBi/blob/main/assets/projectSnippets/Screen%20Shot%202021-12-09%20at%2011.27.47%20AM.png)
-
-Disclaimer: I am not a financial advisor, everything here is used for entertainment purposes only!
