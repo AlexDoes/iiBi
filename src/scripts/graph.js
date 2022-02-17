@@ -10,7 +10,7 @@ function makeChart(ticker) {
   }
   closeCenerImg();
 
-  const margin = {top: 10, right: 30, bottom: 30, left: 60},
+  const margin = {top: 10, right: 30, bottom: 50, left: 60},
   width = document.documentElement.clientWidth * .65 - margin.left - margin.right,
   height = document.documentElement.clientHeight * .8 - margin.top - margin.bottom;
 
@@ -21,9 +21,9 @@ function makeChart(ticker) {
   .append("g")
   .attr("transform", `translate(${margin.left},${margin.top})`);
 
-  d3.csv(`./sampleData/daily_adjusted_${ticker}.csv`,
+  d3.csv(`./sampleData/monthly_${ticker}.csv`,
     function(d){
-        return { date : d3.timeParse("%Y-%m-%d")(d.date), open : d.open, high : d.high, low : d.low, close : d.close, volume : d.volume };
+        return { date : d3.timeParse("%Y-%m-%d")(d.timestamp), open : d.open, high : d.high, low : d.low, close : d.close};
     }).then(
       function(data) {
         data = data.reverse();
@@ -38,9 +38,12 @@ function makeChart(ticker) {
         
         svg.append("g") 
           .attr("transform", `translate(0, ${height})`)
+          .attr("class", "x-axis")
           .transition() 
           .duration(2500)
-          .call(d3.axisBottom(x));
+          // .attr("transform", "rotate(-70)")
+          .call(d3.axisBottom(x))
+          // .attr("transform", "rotate(-70)");
         
         svg.append("g") 
           .transition() 
@@ -50,6 +53,7 @@ function makeChart(ticker) {
         svg
           .append("text")
           .attr("transform", "rotate(-90)")
+          // .attr("transform", "rotate(-70)")
           .attr("y", 0 - margin.left)
           .attr("x", 0 - height / 2)
           .attr("dy", ".75em")
@@ -94,6 +98,7 @@ function makeChart(ticker) {
           .append("line")
           .attr("class", "y")
           .style("stroke-dasharray", "3,3")
+          // .style("background", "rgba(0,0,0,.3)")
           .attr("x2", width);
           
         overlay
@@ -113,6 +118,7 @@ function makeChart(ticker) {
           .attr("class", "open")
           .attr("x", width / 25)
           .attr("y", 70 - margin.top / 2)
+          .style("background", "rgba(0,0,0,.3)")
           .style("opacity", "0.6");
 
         overlay
@@ -120,7 +126,8 @@ function makeChart(ticker) {
           .attr("class", "high")
           .attr("x", width / 25 )
           .attr("y", 90 - margin.top / 2)
-          .style("opacity", "0.6");
+          .style("opacity", "0.6")
+          // .attr("background", "rgba(0,0,0,.3)")
 
         overlay
           .append("text")
@@ -150,7 +157,7 @@ function makeChart(ticker) {
           .attr("y", 170 - margin.top / 2)
           .style("opacity","0.6");
           
-        const losses = ['DIDI','GPRO','KHC','UAA']
+        const losses = ['DIDI','GPRO','KHC','UAA', 'CTXR']
 
         function mouseMove(e) {
           const bsec = d3.bisector((d) => d.date).left,
@@ -169,7 +176,7 @@ function makeChart(ticker) {
           overlay
             .select("text.date")
             .text(`Date: ${d.date.toLocaleDateString("en-US", dateOptions)}`)
-            .attr("x", (xTranslate) => {
+            .attr("x", () => {
               if (losses.includes(ticker)) {
                 return ((width / 6) * 4)
               } else {
@@ -180,7 +187,7 @@ function makeChart(ticker) {
           overlay
             .select("text.high")
             .text(`High: $${d.high}`)
-            .attr("x", (xTranslate) => {
+            .attr("x", () => {
               if (losses.includes(ticker)) {
                 return ((width / 6) * 4)
               } else {
@@ -190,7 +197,7 @@ function makeChart(ticker) {
           overlay
             .select("text.open")
             .text(`Open: $${d.open}`)
-            .attr("x", (xTranslate) => {
+            .attr("x", () => {
               if (losses.includes(ticker)) {
                 return ((width/6) * 4)
               }else {
@@ -200,7 +207,7 @@ function makeChart(ticker) {
           overlay
             .select("text.close")
             .text(`Close: $${d.close}`)
-            .attr("x", (xTranslate) => {
+            .attr("x", () => {
               if (losses.includes(ticker)) {
                 return ((width/6) * 4)
               }else {
@@ -210,7 +217,7 @@ function makeChart(ticker) {
           overlay
             .select("text.low")
             .text(`Low: $${d.low}`)
-            .attr("x", (xTranslate) => {
+            .attr("x", () => {
               if (losses.includes(ticker)) {
                 return ((width / 6) * 4)
               } else {
@@ -227,7 +234,7 @@ function makeChart(ticker) {
                 return 'red'
               }
             })
-            .attr("x", (xTranslate) => {
+            .attr("x", () => {
               if (losses.includes(ticker)) {
                 return ((width / 6) * 4)
               } else {
@@ -243,7 +250,7 @@ function makeChart(ticker) {
               } else {
                 return 'red'
               }
-            }).attr("x", (xTranslate) => {
+            }).attr("x", () => {
               if (losses.includes(ticker)) {
                 return ((width / 6) * 4)
               } else {

@@ -115,6 +115,7 @@ text{
   // border: 2px solid green;
   height: 80vh;
   width: 70%;
+  overflow: show;
 }
 
 .tinterModal {
@@ -264,3 +265,17 @@ text{
 .dropdown-content a:hover {background-color: #d0d5f7; color: #c7e9f5;}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropbtn {background-color: #bbf3bd;}
+
+.x-axis > g.tick > text {
+  // transform: rotate(-65);
+  // border: red 2px solid;
+  // color: cyan;
+  -webkit-transform: rotate(30deg) translate(20px, 10px);
+  margin-top: 30px;
+  overflow: auto;
+  // color: red;
+}
+
+.high {
+  color: yellow;
+}

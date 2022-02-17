@@ -103,6 +103,7 @@ text {
   align-items: stretch;
   height: 80vh;
   width: 70%;
+  overflow: show;
 }
 
 .tinterModal {
@@ -250,4 +251,14 @@ text {
 
 .dropdown:hover .dropbtn {
   background-color: #bbf3bd;
+}
+
+.x-axis > g.tick > text {
+  -webkit-transform: rotate(30deg) translate(20px, 10px);
+  margin-top: 30px;
+  overflow: auto;
+}
+
+.high {
+  color: yellow;
 }
