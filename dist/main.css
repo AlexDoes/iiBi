@@ -148,6 +148,9 @@ text {
   font-size: 22px;
   text-align: center;
   font-family: "Comfortaa";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #title {
