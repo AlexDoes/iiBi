@@ -121,6 +121,7 @@ text {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
   position: absolute;
   background-color: #e0f2d6;
   height: 75vh;
