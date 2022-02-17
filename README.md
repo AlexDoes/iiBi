@@ -31,13 +31,17 @@ This project will be implemented with the following technologies:
 ### Preview without hover ###
 ![noHover](https://github.com/AlexDoes/iiBi/blob/main/assets/projectSnippets/Screen%20Shot%202021-12-09%20at%2011.19.32%20AM.png)
 
-### Preview with over ###
+### Preview with hover ###
 ![hover](https://github.com/AlexDoes/iiBi/blob/main/assets/projectSnippets/Screen%20Shot%202021-12-09%20at%2011.20.12%20AM.png)
 
-### Snippet for switching display data from left to right according to data point ### 
+### Snippet for switching display data from left to right(gains/losses as well) according to data point ### 
+One of the issues I faced while displaying the charts is having the text overlap the line, one way to resolve this was by determining if the associated data has a history of downward trends. This also adjusts the daily change to show corresponding colors in relation to gains/losses since the previous data point.
 ![swap](https://github.com/AlexDoes/iiBi/blob/main/assets/projectSnippets/Screen%20Shot%202021-12-09%20at%2011.26.00%20AM.png)
 
 ### Snippet for removing the center image for the graphs ###
+
+This was just a simple jquery to remove the image in the center before rendering the chart. 
+
 ![remove](https://github.com/AlexDoes/iiBi/blob/main/assets/projectSnippets/Screen%20Shot%202021-12-09%20at%2011.27.47%20AM.png)
 
 Disclaimer: I am not a financial advisor, everything here is used for entertainment purposes only!
