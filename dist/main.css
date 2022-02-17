@@ -67,7 +67,7 @@ line.x, line.y {
 }
 
 text {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 2000;
   position: absolute;
 }
@@ -139,13 +139,12 @@ text {
 
 .welcomeBox h1 {
   color: green;
-  margin: 0.5rem 0;
   text-shadow: 0px 2px green;
 }
 
 .welcomeBoxText {
   color: #09434b;
-  font-size: 22px;
+  font-size: 18px;
   text-align: center;
   font-family: "Comfortaa";
   display: flex;
