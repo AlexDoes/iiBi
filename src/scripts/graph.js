@@ -11,8 +11,8 @@ function makeChart(ticker) {
   closeCenerImg();
 
   const margin = {top: 10, right: 30, bottom: 30, left: 60},
-  width = 900 - margin.left - margin.right,
-  height = 600 - margin.top - margin.bottom;
+  width = document.documentElement.clientWidth * .65 - margin.left - margin.right,
+  height = document.documentElement.clientHeight * .8 - margin.top - margin.bottom;
 
   const svg = d3.select("#container")
   .append("svg")

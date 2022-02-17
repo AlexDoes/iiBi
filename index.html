@@ -11,15 +11,24 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
     </style>
-    <link rel="icon" type="image/png" href="./assets/iibiclean.png">
+    <link rel="icon" type="image/png" href="./assets/iibi2.png">
     <title>iiBi</title>
 </head>
 
 <body>
     <div class="nav_bar">
-        <img src="assets/iibi3.png" class="zoom" height=60px width="55px"> 
-    <div id="title"> iiBi </div>
-
+        <div class="nav-bar-right">
+            <img src="assets/iibi2.png" class="nav-logo" height=60px width="55px"> 
+            <div id="title"> iiBi </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">SOCIALS</button>
+            <div class="dropdown-content">
+                <a href="https://github.com/AlexDoes" target="_blank">Github</a>
+                <a href="https://www.linkedin.com/in/alwong191"target="_blank">LinkedIn</a>
+                <a href="https://angel.co/u/awong191"target="_blank">Angelist</a>
+            </div>
+        </div>
     </div>
 
     <div class="tinterModal" id="tint" onClick="closeWelcomeBox()">
@@ -51,34 +60,37 @@
 
     <div class="visual-container">
         <div class="icon-container">
-            <img src="//logo.clearbit.com/amctheatres.com" onclick="makeChart('AMC')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/AMD.com" onclick="makeChart('AMD')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/amazon.com" onclick="makeChart('AMZN')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/DIDIGLOBAL.com" onclick="makeChart('DIDI')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/DOMINOS.com" onclick="makeChart('DPZ')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/dexcom.com" onclick="makeChart('DXCM')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/FACEBOOK.COM" onclick="makeChart('FB')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/GM.com" onclick="makeChart('GM')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/GOPRO.com" onclick="makeChart('GPRO')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/LULULEMON.COM" onclick="makeChart('LULU')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/netflix.com" onclick="makeChart('NFLX')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/NIKE.COM" onclick="makeChart('NKE')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/nikolamotor.com" onclick="makeChart('NKLA')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/PELOTON.COM" onclick="makeChart('PTON')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/senseonics.com" onclick="makeChart('SENS')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/SPGLOBAL.COM" onclick="makeChart('SPY')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/TESLA.COM" onclick="makeChart('TSLA')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/UA.COM" onclick="makeChart('UAA')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/ULTA.COM" onclick="makeChart('ULTA')" class="logo" height=60px width=60px>
-            <img src="//logo.clearbit.com/ZOOM.COM" onclick="makeChart('ZM')" class="logo" height=60px width=60px>
+            <img src="//logo.clearbit.com/amctheatres.com" onclick="makeChart('AMC')" class="logo">
+            <img src="//logo.clearbit.com/AMD.com" onclick="makeChart('AMD')" class="logo">
+            <img src="//logo.clearbit.com/amazon.com" onclick="makeChart('AMZN')" class="logo">
+            <img src="//logo.clearbit.com/DIDIGLOBAL.com" onclick="makeChart('DIDI')" class="logo">
+            <img src="//logo.clearbit.com/DOMINOS.com" onclick="makeChart('DPZ')" class="logo">
+            <img src="//logo.clearbit.com/dexcom.com" onclick="makeChart('DXCM')" class="logo">
+            <img src="//logo.clearbit.com/FACEBOOK.COM" onclick="makeChart('FB')" class="logo">
+            <img src="//logo.clearbit.com/GM.com" onclick="makeChart('GM')" class="logo">
+            <img src="//logo.clearbit.com/GOPRO.com" onclick="makeChart('GPRO')" class="logo">
+            <img src="//logo.clearbit.com/LULULEMON.COM" onclick="makeChart('LULU')" class="logo">
+            <img src="//logo.clearbit.com/netflix.com" onclick="makeChart('NFLX')" class="logo">
+            <img src="//logo.clearbit.com/NIKE.COM" onclick="makeChart('NKE')" class="logo">
+            <img src="//logo.clearbit.com/nikolamotor.com" onclick="makeChart('NKLA')" class="logo">
+            <img src="//logo.clearbit.com/PELOTON.COM" onclick="makeChart('PTON')" class="logo">
+            <img src="//logo.clearbit.com/senseonics.com" onclick="makeChart('SENS')" class="logo">
+            <img src="//logo.clearbit.com/SPGLOBAL.COM" onclick="makeChart('SPY')" class="logo">
+            <img src="//logo.clearbit.com/TESLA.COM" onclick="makeChart('TSLA')" class="logo">
+            <img src="//logo.clearbit.com/UA.COM" onclick="makeChart('UAA')" class="logo">
+            <img src="//logo.clearbit.com/ULTA.COM" onclick="makeChart('ULTA')" class="logo">
+            <img src="//logo.clearbit.com/ZOOM.COM" onclick="makeChart('ZM')" class="logo">
         </div>
 
         <script src="src/scripts/graph.js"></script>
         <script src="src/scripts/closeWelcome.js"></script>
 
         <div id="container">
-            <img src="assets/iibi3.png" id="centerimg" height=550 width=500>
+            <img src="assets/iibiclean.png" id="centerimg">
         </div>
+    </div>
+    <div class="footer">
+        <button onclick="openWelcomeBox()" class="help-button"> ? </button>
     </div>
 </body>
 

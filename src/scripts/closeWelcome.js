@@ -5,3 +5,9 @@ function closeWelcomeBox() {
     tintOverlay.style.display = "none";
     
 }
+
+function openWelcomeBox() {
+
+    tintOverlay.style.display = "block";
+    
+}
