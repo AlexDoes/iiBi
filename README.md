@@ -36,6 +36,7 @@ This project will be implemented with the following technologies:
 
 ### Snippet for switching display data from left to right(gains/losses as well) according to data point ### 
 One of the issues I faced while displaying the charts is having the text overlap the line, one way to resolve this was by determining if the associated data has a history of downward trends. This also adjusts the daily change to show corresponding colors in relation to gains/losses since the previous data point.
+
 ![swap](https://github.com/AlexDoes/iiBi/blob/main/assets/projectSnippets/Screen%20Shot%202021-12-09%20at%2011.26.00%20AM.png)
 
 ### Snippet for removing the center image for the graphs ###
